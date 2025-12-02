@@ -1,75 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Para meu amor — Ana Luisa ❤️</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para meu amor ❤️</title>
 
-  <!-- Fonte elegante e fofa -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+  <!-- Fonte fofa e elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Cookie&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(180deg, #fff7fb, #ffe6ee);
-      min-height: 100vh;
+      background: linear-gradient(180deg, #ffe6ea, #fff3f6, #ffe8f0);
+      color: #4a1c1c;
       text-align: center;
-      color: #4a1f2d;
       overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Fundo com luzinhas */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://i.imgur.com/63lZfPU.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.22;
+      pointer-events: none;
     }
 
     h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 2.3rem;
-      margin-top: 40px;
-      color: #d3476d;
-      animation: fadeIn 1.5s ease;
+      font-family: "Cookie", cursive;
+      font-size: 3.3rem;
+      margin-top: 30px;
+      color: #c2274c;
+      animation: fadeIn 2s ease-in-out;
     }
 
     p {
-      width: 90%;
-      max-width: 600px;
+      font-size: 1.2rem;
+      width: 85%;
       margin: 15px auto;
-      line-height: 1.6;
-      font-size: 1.1rem;
-      animation: fadeInUp 1.5s ease;
+      line-height: 1.7;
+      animation: fadeInUp 1.8s ease;
     }
 
     .card {
-      background: #ffffffcc;
-      margin: 25px auto;
+      background: rgba(255, 255, 255, 0.88);
       padding: 25px;
-      border-radius: 20px;
-      max-width: 600px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
-      backdrop-filter: blur(3px);
+      border-radius: 25px;
+      width: 85%;
+      max-width: 480px;
+      margin: 30px auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(6px);
+      animation: float 3s ease-in-out infinite;
     }
 
+    /* Botão fofo */
     #startBtn {
-      margin-top: 100px;
-      background: #ff5f7c;
+      background: #ff5d86;
       color: white;
-      padding: 18px 45px;
-      font-size: 1.4rem;
+      padding: 18px 40px;
       border: none;
       border-radius: 50px;
+      font-size: 1.4rem;
+      margin-top: 90px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(255, 95, 124, 0.6);
-      transition: 0.2s;
+      box-shadow: 0 0 20px rgba(255, 93, 134, 0.8);
+      animation: pulse 1.8s infinite;
     }
 
-    #startBtn:active {
-      transform: scale(0.95);
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
     }
 
-    #content {
-      display: none;
-      padding-bottom: 40px;
-    }
-
-    /* ANIMAÇÃO SUAVE */
+    /* Animações */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -80,43 +96,82 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Neve */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 1.4rem;
+      animation: snow 10s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes snow {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    #content { display: none; }
   </style>
 </head>
 <body>
 
-  <button id="startBtn">Abrir seu presente, meu amor 💖</button>
+  <button id="startBtn">Clique aqui, meu amor ❤️</button>
 
   <div id="content">
-    <h1>Para você, Ana Luisa ✨❤️</h1>
+    <h1>🎄 Para o meu amor, Ana Luisa ❤️</h1>
 
     <div class="card">
-      <p>Meu amor… este Natal vai ser diferente. Não vamos poder estar juntinhos como eu queria. Mas mesmo assim, eu precisava te entregar algo que viesse do meu coração. Algo que mostrasse o quanto você significa pra mim.</p>
-
-      <p>Você é a melhor parte dos meus dias. E mesmo longe, você consegue deixar tudo mais leve, mais doce, mais bonito. É incrível como você consegue fazer isso sem nem perceber.</p>
+      <p>Meu amor, neste Natal eu queria muito estar com você. Queria te abraçar forte, sentir seu cheirinho, ver seu sorriso de pertinho, te desejar Feliz Natal olhando nos seus olhos. 💖</p>
+      <p>Mas mesmo longe fisicamente, o meu coração está coladinho no seu. Você é o meu melhor presente da vida, e esses 8 meses ao seu lado foram os mais especiais que eu já vivi.</p>
+      <p>Você me faz tão bem, amor. Tão mais leve, tão mais feliz, tão mais eu mesmo. Eu não trocaria o que nós temos por nada no mundo.</p>
     </div>
 
     <div class="card">
-      <p>Eu queria muito te abraçar neste Natal, sentir seu cheiro, ver seu sorriso de pertinho. Mas já que não vai ser possível… quero que você sinta meu carinho daqui.</p>
-
-      <p>Feche os olhos por um segundo. Imagina eu aí do teu lado, segurando sua mão e desejando o Natal mais lindo do mundo pra você. Porque você merece tudo de bom. Tudo mesmo.</p>
+      <p>Eu queria que você soubesse que, mesmo longe, você faz parte de cada detalhe do meu dia. Eu penso em você quando acordo, penso em você antes de dormir, e penso em você em todos os momentos entre um e outro.</p>
+      <p>Neste Natal, meu desejo é simples: que a gente continue crescendo juntos, rindo juntos, vivendo juntos… e que venham muitos e muitos natais ao seu lado. 🎁✨</p>
+      <p>Você é o meu lar mesmo quando não está perto. Você é o meu conforto, o meu abraço favorito, a minha pessoa preferida.</p>
     </div>
 
     <div class="card">
-      <p>Ana… obrigado por estar comigo. Obrigado por ser tão incrível, tão carinhosa, tão você. Você é meu presente não só hoje, mas todos os dias. Eu te amo de um jeito tão sincero, tão verdadeiro, que nem sei explicar direito.</p>
-
-      <p>Feliz Natal, meu amor. Que seja doce, leve e cheio de luz — como você. ❤️✨</p>
+      <p>Eu te amo, Ana Luisa. De um jeito tão grande que às vezes nem cabe aqui dentro do peito. E prometo que um dia a gente vai rir desse Natal distante enquanto aproveita um bem juntinho.</p>
+      <p>Obrigada por existir. Obrigada por ser a minha luzinha de Natal todos os dias. 🎄✨❤️</p>
     </div>
-
   </div>
 
-  <script>
-    const btn = document.getElementById('startBtn');
-    const content = document.getElementById('content');
+  <!-- Música -->
+  <audio id="music" src="https://files.catbox.moe/3q4p3n.mp3"></audio>
 
-    btn.addEventListener('click', () => {
-      btn.style.display = "none";
-      content.style.display = "block";
-      window.scrollTo(0,0);
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("startBtn");
+      const content = document.getElementById("content");
+      const music = document.getElementById("music");
+
+      btn.addEventListener("click", function () {
+        content.style.display = "block";
+        btn.style.display = "none";
+        music.volume = 0.45;
+        music.play().catch(() => {});
+      });
+
+      function createSnowflake() {
+        const snow = document.createElement("div");
+        snow.classList.add("snowflake");
+        snow.innerHTML = "❄";
+        snow.style.left = Math.random() * 100 + "vw";
+        snow.style.animationDuration = 5 + Math.random() * 5 + "s";
+        document.body.appendChild(snow);
+        setTimeout(() => snow.remove(), 10000);
+      }
+
+      setInterval(createSnowflake, 200);
     });
   </script>
 
