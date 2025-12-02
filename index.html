@@ -1,234 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Para meu amor — Ana Luisa ❤️</title>
-<style>
-  :root{
-    --bg1:#fff0f3;
-    --bg2:#fff8f0;
-    --accent:#ff4d6d;
-    --text:#3a1b1b;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;
-    font-family: "Poppins", Arial, sans-serif;
-    background: linear-gradient(180deg,var(--bg1),var(--bg2));
-    color:var(--text);
-    min-height:100vh;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para meu amor ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Arial", sans-serif;
+      background: linear-gradient(180deg, #ffdde1, #ffecef);
+      color: #4a1c1c;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-  header{
-    padding:28px 16px 6px;
-    text-align:center;
-  }
-  header h1{margin:0;font-size:1.9rem; letter-spacing:0.2px}
-  header p{margin:6px 0 0;font-size:0.95rem;opacity:0.9}
+    h1 {
+      font-size: 2.4rem;
+      margin-top: 40px;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-  /* botão de abertura */
-  #startBtn{
-    display:inline-block;
-    margin:22px auto;
-    padding:16px 34px;
-    border-radius:40px;
-    border:none;
-    background:linear-gradient(90deg,#ff6b86,#ff2d59);
-    color:white;
-    font-size:1.15rem;
-    box-shadow:0 10px 30px rgba(255,77,109,0.25);
-    cursor:pointer;
-    transition:transform .18s ease, box-shadow .18s;
-  }
-  #startBtn:active{transform:scale(.98)}
-  #startBtn .spark{display:inline-block;margin-left:10px;opacity:0.95}
+    p {
+      font-size: 1.2rem;
+      width: 85%;
+      margin: 20px auto;
+      line-height: 1.6;
+      animation: fadeInUp 2s ease;
+    }
 
-  /* container do conteúdo que aparece depois */
-  #content{display:none;padding:18px 12px 70px}
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      width: 85%;
+      max-width: 450px;
+      margin: 30px auto;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: float 3s ease-in-out infinite;
+    }
 
-  .card{
-    background:rgba(255,255,255,0.95);
-    border-radius:18px;
-    padding:18px;
-    margin:14px auto;
-    max-width:680px;
-    box-shadow:0 8px 30px rgba(0,0,0,0.10);
-    animation:cardIn .7s ease;
-  }
-  .card h2{margin:0 0 8px;font-size:1.2rem}
-  .card p{margin:8px 0;line-height:1.5}
+    /* Botão decorado */
+    #startBtn {
+      background: #ff4d6d;
+      color: white;
+      padding: 18px 35px;
+      border: none;
+      border-radius: 40px;
+      font-size: 1.3rem;
+      margin-top: 90px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 77, 109, 0.8);
+      animation: pulse 1.8s infinite;
+    }
 
-  /* ornamentos */
-  .lights{
-    position:fixed;
-    top:6px;
-    left:0;right:0;
-    height:60px;
-    pointer-events:none;
-    z-index:6;
-    display:flex;
-    justify-content:center;
-    gap:6px;
-  }
-  .bulb{
-    width:12px;height:12px;border-radius:10px;
-    box-shadow:0 0 8px rgba(0,0,0,0.12);
-    animation:blink 2.2s infinite;
-  }
-  .bulb:nth-child(odd){animation-duration:1.6s}
-  @keyframes blink{0%{opacity:.25}50%{opacity:1; transform:translateY(-4px)}100%{opacity:.35}}
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+      100% { transform: scale(1); }
+    }
 
-  /* neve (emojis) */
-  .snowflake{
-    position:fixed;
-    top:-20px;
-    font-size:18px;
-    color:#fff;
-    text-shadow:0 0 6px rgba(0,0,0,0.25);
-    pointer-events:none;
-    z-index:5;
-    animation:fall linear infinite;
-  }
-  @keyframes fall{
-    to{transform:translateY(120vh) rotate(360deg)}
-  }
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-  /* efeitos de coraçãos e pulse */
-  .hearts{position:fixed;right:12px;bottom:12px;pointer-events:none;z-index:7}
-  .heart{
-    width:14px;height:14px;background:var(--accent);border-radius:4px;opacity:.95;
-    transform:rotate(45deg) translateY(30px);
-    box-shadow:0 6px 20px rgba(255,77,109,0.2);
-    animation:heartRise 3s linear infinite;
-  }
-  .heart:after,.heart:before{
-    content:"";position:absolute;width:14px;height:14px;background:var(--accent);border-radius:50%;
-  }
-  @keyframes heartRise{0%{transform:translateY(0) scale(.6) rotate(45deg);opacity:0}40%{opacity:1;transform:translateY(-140px) scale(1)}100%{opacity:0;transform:translateY(-320px) scale(.8)}}
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-  /* small animations */
-  @keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  @keyframes sparkle{0%{opacity:0;transform:scale(.6)}50%{opacity:1}100%{opacity:0;transform:scale(1.4)}}
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
 
-  /* footer */
-  footer{opacity:0.9;text-align:center;padding:24px 12px 40px;font-size:0.9rem}
+    /* Neve */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 1.2rem;
+      animation: snow 10s linear infinite;
+      pointer-events: none;
+    }
 
-  /* responsivo */
-  @media(min-width:800px){
-    header h1{font-size:2.6rem}
-    #startBtn{font-size:1.25rem;padding:16px 46px}
-  }
-</style>
+    @keyframes snow {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    /* Conteúdo escondido */
+    #content { display: none; }
+  </style>
 </head>
 <body>
 
-<!-- luzinhas no topo -->
-<div class="lights" aria-hidden="true">
-  <div class="bulb" style="background:#ffd166"></div>
-  <div class="bulb" style="background:#ef476f"></div>
-  <div class="bulb" style="background:#06d6a0"></div>
-  <div class="bulb" style="background:#ffd166"></div>
-  <div class="bulb" style="background:#ef476f"></div>
-</div>
+  <button id="startBtn">Clique aqui, meu amor ❤️</button>
 
-<header>
-  <h1>Um presente pra você, Ana Luisa 🎁</h1>
-  <p>Pra minha melhor companhia — meu amor.</p>
-</header>
+  <div id="content">
+    <h1>🎄 Para o meu amor, Ana Luisa ❤️</h1>
 
-<div style="text-align:center">
-  <button id="startBtn">Abrir meu presente pra você <span class="spark">✨</span></button>
-</div>
+    <div class="card">
+      <p>Feliz Natal, meu amor! 🎅✨</p>
+      <p>Já estamos juntos há <strong>8 meses</strong>, e eu fui e ainda sou muito feliz por isso.</p>
+      <p>Você ilumina meus dias como as luzes de Natal iluminam a cidade.</p>
+      <p>Você é especial para mim de um jeito que nem as palavras conseguem explicar.</p>
+      <p>Eu quero que isso dure por <strong>muuuuuuito tempo</strong>. ❤️</p>
+    </div>
 
-<!-- conteúdo oculto até clicar -->
-<main id="content" role="main" aria-live="polite">
-  <section class="card">
-    <h2>🎄 Feliz Natal, amor!</h2>
-    <p>Já estamos juntos há <strong>8 meses</strong>, e eu fui e ainda sou muito feliz por isso. Você é a pessoa que eu mais quero ao meu lado — hoje, amanhã e sempre.</p>
-  </section>
+    <div class="card">
+      <p>Você é o meu presente diário, meu aconchego, meu sorriso favorito.</p>
+      <p>Eu amo cada detalhe seu, cada conversa nossa, cada momento ao seu lado.</p>
+      <p>Obrigado por ser você. Obrigado por ser minha.</p>
+      <p>Te amo mais do que ontem e menos do que amanhã. 💖</p>
+    </div>
 
-  <section class="card">
-    <h2>Pequenas memórias</h2>
-    <p>Lembra daquele dia que a gente riu até a barriga doer? Eu guardo cada sorriso seu no meu melhor lugar. Obrigado por cada conversa, cada vídeo que a gente troca e por ser tão especial.</p>
-    <p><em>Quero que isso dure por muuuito tempo.</em> 💖</p>
-  </section>
+    <div class="card">
+      <p>Que nosso Natal seja doce, quentinho e cheio de amor.</p>
+      <p>E que venham muitos e muitos outros natais ao seu lado. 🎁✨</p>
+    </div>
+  </div>
 
-  <section class="card">
-    <h2>Promessa</h2>
-    <p>Eu prometo continuar cuidando de você, te apoiar e te fazer sorrir — mesmo nos dias nublados.</p>
-    <p>Te amo hoje mais do que ontem e menos do que amanhã.</p>
-  </section>
-</main>
+  <!-- Música -->
+  <audio id="music" src="https://files.catbox.moe/3q4p3n.mp3"></audio>
 
-<footer>
-  <p>Com amor, seu namorado. ❤️</p>
-</footer>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("startBtn");
+    const content = document.getElementById("content");
+    const music = document.getElementById("music");
 
-<!-- CORAÇÃOS (visuais apenas) -->
-<div class="hearts" aria-hidden="true">
-  <div class="heart" style="animation-delay:0s; position:relative;"></div>
-  <div class="heart" style="animation-delay:0.8s; position:relative;"></div>
-  <div class="heart" style="animation-delay:1.6s; position:relative;"></div>
-</div>
+    btn.addEventListener("click", function () {
+      try {
+        content.style.display = "block";
+        btn.style.display = "none";
 
-<!-- AUDIO: opção 1 -> arquivo no repositório: /music.mp3
-     Se tu quiser usar esse método, faz upload do music.mp3 na raiz do repo (via "Add file > Upload files")
-     e a linha abaixo vai tocar quando o conteúdo abrir.
--->
-<audio id="music" src="music.mp3" preload="none"></audio>
+        if (music) {
+          music.volume = 0.5;
+          music.play().catch(() => {
+            console.log("Autoplay bloqueado — mas o conteúdo abriu.");
+          });
+        }
+      } catch (e) {
+        console.error("Erro no botão:", e);
+      }
+    });
 
-<!-- OPÇÃO 2: Spotify embed (comentada). Se quiser o player Spotify,
-     troca o iframe abaixo pelo link do track:
-     1) no Spotify app/web clica em Compartilhar -> Copiar link da música
-     2) pega o link e substitui em data-uri do iframe
-     Observação: embeds do Spotify não vão tocar automaticamente em muitos navegadores; o usuário precisa clicar.
--->
-<!--
-<div style="text-align:center;margin:10px 0">
-  <iframe src="https://open.spotify.com/embed/track/TUO_LINK_AQUI" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-</div>
--->
-
-<script>
-  // função pra criar neve e espalhar
-  function makeSnow(){
-    const emojiSet = ["❄","❅","❆","✧"];
-    const n = 12;
-    for(let i=0;i<n;i++){
-      const s=document.createElement("div");
-      s.className="snowflake";
-      s.innerText = emojiSet[Math.floor(Math.random()*emojiSet.length)];
-      // random position and timing
-      s.style.left = Math.random()*100 + "vw";
-      s.style.fontSize = (12 + Math.random()*28) + "px";
-      s.style.opacity = 0.9 - Math.random()*0.6;
-      s.style.animationDuration = (6 + Math.random()*8) + "s";
-      s.style.transform = "translateY(-10vh) rotate(" + Math.floor(Math.random()*360) + "deg)";
-      document.body.appendChild(s);
-      // remove after animation
-      setTimeout(()=> s.remove(), 16000);
+    // Neve animada
+    function createSnowflake() {
+      const snow = document.createElement("div");
+      snow.classList.add("snowflake");
+      snow.innerHTML = "❄";
+      snow.style.left = Math.random() * 100 + "vw";
+      snow.style.animationDuration = 5 + Math.random() * 5 + "s";
+      document.body.appendChild(snow);
+      setTimeout(() => snow.remove(), 10000);
     }
-  }
-  // interval de neve
-  setInterval(makeSnow, 800);
 
-  // abrir conteúdo
-  const btn = document.getElementById("startBtn");
-  const content = document.getElementById("content");
-  const music = document.getElementById("music");
+    setInterval(createSnowflake, 200);
+  });
+</script>
 
-  btn.addEventListener("click", ()=>{
-    btn.style.display = "none";
-    content.style.display = "block";
-    // tenta tocar a música (só funciona se houver interação do usuário; aqui já tem)
-    if(music && music.src){
-      music.volume = 0.5;
-      music.play().catch(()=>{ /* browsers podem bloquear autoplay; usuário só precisa apertar play */ });
-    }
-    // pequenos fogos/efeitos ao abrir
-    for(let i=0;i<18;i++){
-      const sp = document.createElement("span");
-      sp.style.position = "
+</body>
+</html>
