@@ -1,108 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Para meu amor — Ana Luisa ❤️</title>
 
-  <!-- Fontes fofas e elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <!-- Fonte elegante e fofa -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
 
   <style>
-    /* Reset e base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
+      margin: 0;
+      padding: 0;
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(180deg, #fff8fa, #ffeef3, #ffe3ed);
-      color: #3c1e1e;
-      text-align: center;
+      background: linear-gradient(180deg, #fff7fb, #ffe6ee);
       min-height: 100vh;
+      text-align: center;
+      color: #4a1f2d;
       overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Fundo decorado com leve textura ou imagem sutil (opcional) */
-    body::before {
-      content: "";
-      position: fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      background: url('https://i.imgur.com/63lZfPU.png') center/cover no-repeat;
-      opacity: 0.15;
-      pointer-events: none;
     }
 
     h1 {
       font-family: "Playfair Display", serif;
-      font-size: 2.8rem;
-      color: #c9385a;
-      margin-top: 35px;
-      animation: fadeIn 2s ease-in-out;
+      font-size: 2.3rem;
+      margin-top: 40px;
+      color: #d3476d;
+      animation: fadeIn 1.5s ease;
     }
 
     p {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      margin: 12px auto;
-      width: 85%;
+      width: 90%;
       max-width: 600px;
+      margin: 15px auto;
+      line-height: 1.6;
+      font-size: 1.1rem;
       animation: fadeInUp 1.5s ease;
     }
 
     .card {
-      background: rgba(255,255,255,0.92);
-      border-radius: 22px;
-      padding: 26px;
-      margin: 30px auto;
-      max-width: 520px;
-      box-shadow: 0 6px 25px rgba(0,0,0,0.12);
-      backdrop-filter: blur(4px);
-      animation: float 3s ease-in-out infinite;
+      background: #ffffffcc;
+      margin: 25px auto;
+      padding: 25px;
+      border-radius: 20px;
+      max-width: 600px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+      backdrop-filter: blur(3px);
     }
 
-    /* Botão de abertura */
     #startBtn {
-      background: #ff6c8b;
-      color: #fff;
-      border: none;
-      padding: 20px 44px;
-      border-radius: 60px;
+      margin-top: 100px;
+      background: #ff5f7c;
+      color: white;
+      padding: 18px 45px;
       font-size: 1.4rem;
-      font-weight: 600;
+      border: none;
+      border-radius: 50px;
       cursor: pointer;
-      box-shadow: 0 0 22px rgba(255,108,139,0.8);
-      transition: transform .2s ease, box-shadow .2s ease;
-      margin: 80px auto;
-      display: inline-block;
-    }
-    #startBtn:active {
-      transform: scale(0.96);
-      box-shadow: 0 0 12px rgba(255,108,139,0.6);
+      box-shadow: 0 4px 15px rgba(255, 95, 124, 0.6);
+      transition: 0.2s;
     }
 
-    /* Animações */
+    #startBtn:active {
+      transform: scale(0.95);
+    }
+
+    #content {
+      display: none;
+      padding-bottom: 40px;
+    }
+
+    /* ANIMAÇÃO SUAVE */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
-    }
 
-    /* Neve (símbolos) */
-    .snowflake {
-      position: fixed;
-      top: -10px;
-      color: #fff;
-      font-size: 1.4rem;
-      text-shadow: 0 0 4px rgba(0,0,0,0.2);
-      pointer-events: none;
-      animation: snow 12s linear infinite;
-    }
-    @keyframes snow {
+  </style>
+</head>
+<body>
+
+  <button id="startBtn">Abrir seu presente, meu amor 💖</button>
+
+  <div id="content">
+    <h1>Para você, Ana Luisa ✨❤️</h1>
+
+    <div class="card">
+      <p>Meu amor… este Natal vai ser diferente. Não vamos poder estar juntinhos como eu queria. Mas mesmo assim, eu precisava te entregar algo que viesse do meu coração. Algo que mostrasse o quanto você significa pra mim.</p>
+
+      <p>Você é a melhor parte dos meus dias. E mesmo longe, você consegue deixar tudo mais leve, mais doce, mais bonito. É incrível como você consegue fazer isso sem nem perceber.</p>
+    </div>
+
+    <div class="card">
+      <p>Eu queria muito te abraçar neste Natal, sentir seu cheiro, ver seu sorriso de pertinho. Mas já que não vai ser possível… quero que você sinta meu carinho daqui.</p>
+
+      <p>Feche os olhos por um segundo. Imagina eu aí do teu lado, segurando sua mão e desejando o Natal mais lindo do mundo pra você. Porque você merece tudo de bom. Tudo mesmo.</p>
+    </div>
+
+    <div class="card">
+      <p>Ana… obrigado por estar comigo. Obrigado por ser tão incrível, tão carinhosa, tão você. Você é meu presente não só hoje, mas todos os dias. Eu te amo de um jeito tão sincero, tão verdadeiro, que nem sei explicar direito.</p>
+
+      <p>Feliz Natal, meu amor. Que seja doce, leve e cheio de luz — como você. ❤️✨</p>
+    </div>
+
+  </div>
+
+  <script>
+    const btn = document.getElementById('startBtn');
+    const content = document.getElementById('content');
+
+    btn.addEventListener('click', () => {
+      btn.style.display = "none";
+      content.style.display = "block";
+      window.scrollTo(0,0);
+    });
+  </script>
+
+</body>
+</html>
